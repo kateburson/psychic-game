@@ -14,29 +14,27 @@ document.onkeyup = function letterCheck(event) {
     var userGuess = event.key;
     lettersGuessed = document.getElementById('lettersGuessed');
     var div = document.createElement('div');
-    div.textContent = '' + userGuess;
+    div.textContent = userGuess;
     lettersGuessed.appendChild(div);
     if(userGuess === randomLetter) {
         wins = document.getElementById('wins');
         div = document.createElement('div');
-        div.textContent = '' + wins++;
+        div.textContent = wins++;
         wins.appendChild(div);
     }
     else {
         guessesLeft = document.getElementById('guessesLeft');
         div = document.createElement('div');
-        div.textContent = '' + guessesLeft--;
+        div.textContent = guessesLeft--;
         guessesLeft.appendChild(div);
     }
 };
 
 if(guessesLeft === 0) {
-    function endGame() {
     alert('Game Over');
     losses = document.getElementById('losses');
     var div = document.createElement('div');
     div.textContent = losses++;
     losses.appendChild(div);
     game();
-    }
 };
